@@ -9,6 +9,6 @@ def extarct_text(file, output="extracted_text.txt"):
 
     for page in doc:
         with open(output,"a") as f:
-            f.write(page.get_text)
+            f.write(page.get_text())
 
     
