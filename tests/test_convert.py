@@ -1,4 +1,4 @@
-from operations.pdf_to_image import to_png
+from operations.convert import to_png
 import os
 
 def main():
