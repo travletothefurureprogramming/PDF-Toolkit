@@ -1,3 +1,7 @@
+from operations.merge import merge_files
+import os
+
+
 def main():
     print("PDF Toolkit")
 
