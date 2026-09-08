@@ -1,10 +1,7 @@
-from operations.merge import merge_files
-import os
-
+import cli
 
 def main():
-    print("PDF Toolkit")
-
+    cli.main()
 
 if __name__ == "__main__":
     main()
