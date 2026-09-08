@@ -266,5 +266,5 @@ def main():
                 print(f"✗ Failed to extract text: {e}")
 
 
-if __name__ == "__main__":
+if __name__ == "__main":        
     main()
