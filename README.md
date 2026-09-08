@@ -29,15 +29,15 @@ pip install -r requirements.txt
 
 ## Usage
 
-Run the toolkit:
+* Run the toolkit:
 
 python cli.py
 
-Show help:
+* Show help:
 
 python cli.py --help
 
-Show version:
+* Show version:
 
 python cli.py --version
 
