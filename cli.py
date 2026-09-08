@@ -12,6 +12,21 @@ from operations.split import split_pdf
 from operations.merge import merge_files
 from operations.convert import to_png
 
+import argparse
+
+VERSION = "1.0.0"
+
+parser = argparse.ArgumentParser(
+    description="PDF Toolkit - A simple PDF utility for Python"
+)
+
+parser.add_argument(
+    "--version",
+    action="version",
+    version=f"PDF Toolkit {VERSION}"
+)
+
+args = parser.parse_args()
 
 def main():
     print(
