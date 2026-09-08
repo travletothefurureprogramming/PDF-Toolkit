@@ -11,6 +11,7 @@ from operations.extract import extract_pages
 from operations.split import split_pdf
 from operations.merge import merge_files
 from operations.convert import to_png
+from operations.extract_text import extarct_text
 
 import argparse
 
@@ -43,6 +44,7 @@ def main():
                 "PDF → Image",
                 "Split PDF",
                 "Extract Pages",
+                "Extract Text",
                 "Exit",
             ],
         ).ask()
@@ -226,6 +228,42 @@ def main():
 
             except Exception as e:
                 print(f"✗ Failed to extract pages: {e}")
+
+        # --------------------------------------------------
+        # Extract Text
+        # --------------------------------------------------
+        elif operation == "Extract Text":
+            print("\nExtract Text")
+
+            file = askopenfilename(
+                title="Select a PDF",
+                filetypes=[("PDF files", "*.pdf")],
+            )
+
+            if not file:
+                print("No file selected.")
+                continue
+
+
+            output = asksaveasfilename(
+                title="Save extracted Text",
+                defaultextension=".txt",
+                filetypes=[("Text files", "*.txt")],
+            )
+
+            if not output:
+                print("Output location not selected.")
+                continue
+
+            try:
+                extarct_text(file, output)
+                print(
+                    f"✓ Text extracted successfully!\n"
+                    f"  Output: {output}"
+                )
+
+            except Exception as e:
+                print(f"✗ Failed to extract text: {e}")
 
 
 if __name__ == "__main__":
